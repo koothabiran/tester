@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-09-30T10:54:43Z" name="Suite" finished-at="2019-09-30T10:55:55Z" duration-ms="72183">
+    <groups>
+    </groups>
+    <test started-at="2019-09-30T10:54:43Z" name="Test" finished-at="2019-09-30T10:55:55Z" duration-ms="72183">
+      <class name="pack.class3">
+        <test-method signature="openbrowser()[pri:0, instance:pack.class3@3ec300f1]" started-at="2019-09-30T16:25:42Z" name="openbrowser" finished-at="2019-09-30T16:25:55Z" duration-ms="13450" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openbrowser -->
+      </class> <!-- pack.class3 -->
+      <class name="pack.class1">
+        <test-method signature="openbrowser()[pri:0, instance:pack.class1@589b3632]" started-at="2019-09-30T16:24:43Z" name="openbrowser" finished-at="2019-09-30T16:25:12Z" duration-ms="28854" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openbrowser -->
+      </class> <!-- pack.class1 -->
+      <class name="pack.class2">
+        <test-method signature="openbrowser()[pri:0, instance:pack.class2@105fece7]" started-at="2019-09-30T16:25:12Z" name="openbrowser" finished-at="2019-09-30T16:25:42Z" duration-ms="29853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openbrowser -->
+      </class> <!-- pack.class2 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

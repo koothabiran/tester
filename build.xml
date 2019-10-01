@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?> 
+<project name="autoit" basedir="." default="run">
+
+	<target name="init">
+		<property name="lib" value="${basedir}/library"/> 
+		<property name="bin" value="${basedir}/bin"/> 
+		<property name="src" value="${basedir}/src"/> 
+		<property name="report" value="${basedir}/report"/> 
+	</target>
+
+	<target name="clean" depends="init">
+		<echo message="deleting existing report folder" />
+		<delete dir="${report}" /> 
+		<echo message="deleting existing bin folder" />
+		<delete dir="${bin}" /> 
+		<echo message="creating empty bin folder" />
+		<mkdir dir="${bin}" />
+	</target>
+
+	<target name="compile" depends="clean">
+		<javac srcdir="${src}" destdir="${bin}" > 
+			<classpath>
+				<pathelement path="${bin}"></pathelement>
+				<fileset dir="${lib}">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<path id="classpath" >
+		<pathelement path="bin" />
+		<fileset dir="library" >
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="run" depends="compile">
+		<mkdir dir="${report}" />
+		<taskdef name="testng" classname="org.testng.TestNGAntTask">
+			<classpath location="${lib}/testng-6.7.jar" />
+		</taskdef>
+		<testng outputdir="${report}" classpathref="classpath" useDefaultListeners="true">
+			<xmlfileset dir="${src}" includes="testng.xml" />
+		</testng>
+	</target>
+</project>
